@@ -14,14 +14,15 @@ class UsersUpdate extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->string('password')->nullable()->change();
             $table->dropColumn('name');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('picture');
-            $table->string('title');
-            $table->string('location');
+            $table->string('title')->nullable();
+            $table->string('location')->nullable();
             $table->bigInteger('parent_id')->nullable();
-            $table->bigInteger('company_id');
+            $table->bigInteger('company_id')->nullable();
         });
     }
 

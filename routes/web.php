@@ -11,4 +11,7 @@
 |
 */
 
-Route::post('user/auth', ['uses'=>'UserController@auth'])->name('google-auth');
+
+Route::post('user/auth', 'UserController@auth')->name('google.auth');
+
+

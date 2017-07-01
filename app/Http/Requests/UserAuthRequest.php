@@ -24,7 +24,17 @@ class UserAuthRequest extends FormRequest
     public function rules()
     {
         return [
-            'auth_token' => 'required|min:5'
+            'access_token' => 'required|min:5'
         ];
+    }
+
+    /**
+     * Return JSON
+     *
+     * @return bool
+     */
+    public function wantsJson()
+    {
+        return true;
     }
 }
